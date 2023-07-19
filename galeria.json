@@ -1,0 +1,47 @@
+{
+    "productos":[
+        {"id":1,
+        "nombre":"adidas1",
+        "precio":"30000",
+        "img":{
+            "imagenUno":"./coleccion-hombres/a1.webp",
+            "imagenDos":"./coleccion-hombres/a2.webp",
+            "imagenTres":"./coleccion-hombres/a3.webp",
+            "imagenCuatro":"./coleccion-hombres/a4.webp"
+
+        }
+
+    },
+    {
+        "id":2,
+        "nombre":"adidas2",
+        "precio":"30000",
+        "img":{
+            "imagenUno":"./coleccion-hombres/b1.webp",
+            "imagenDos":"./coleccion-hombres/b2.webp.webp",
+            "imagenTres":"./coleccion-hombres/b3.webp"
+            
+
+        }
+
+    
+    },
+    {
+        "id":3,
+        "nombre":"adidas3",
+        "precio":"30000",
+        "img":{
+            "imagenUno":"./coleccion-hombres/.webp",
+            "imagenDos":"./coleccion-hombres/a2.webp",
+            "imagenTres":"./coleccion-hombres/a3.webp",
+            "imagenCuatro":"./coleccion-hombres/a4.webp"
+
+        }
+
+    
+    }
+
+    ]
+
+    
+}    

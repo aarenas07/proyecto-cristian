@@ -1,0 +1,149 @@
+{
+  "productos": [
+    {
+      "id": 1,
+      "nombre": "Tenis hombre 1",
+      "precio": "30000",
+      "img": {
+        "imagenUno": "./new-colection/1.png",
+        "imagenDos": "./new-colection/1.1.png",
+        "imagenTres": "./new-colection/1.2.png",
+        "imagenCuatro": "./new-colection/1.3.png"
+      },
+      "idCategoria": 11
+    },
+    {
+      "id": 2,
+      "nombre": "Tenis hombre 2",
+      "precio": "40000",
+      "img": {
+        "imagenUno": "./new-colection/2.png",
+        "imagenDos": "./new-colection/2.1.png",
+        "imagenTres": "./new-colection/2.1.png",
+        "imagenCuatro": "./new-colection/2.1.png"
+      },
+      "idCategoria": 11
+    },
+    {
+      "id": 3,
+      "nombre": "Tenis hombre 3",
+      "precio": "50000",
+      "img": {
+        "imagenUno": "./new-colection/3.png",
+        "imagenDos": "./new-colection/3.1.png",
+        "imagenTres": "./new-colection/3.2.png",
+        "imagenCuatro": "./new-colection/3.3.png"
+      },
+      "idCategoria": 11
+    },
+    {
+      "id": 4,
+      "nombre": "Tenis hombre 4",
+      "precio": "50000",
+      "img": {
+        "imagenUno": "./new-colection/h1.png",
+        "imagenDos": "./new-colection/h2.png",
+        "imagenTres": "./new-colection/h3.png",
+        "imagenCuatro": "./new-colection/h4.png"
+      },
+      "idCategoria": 11
+    },
+    {
+      "id": 5,
+      "nombre": "Tenis Mujer 1",
+      "precio": "50000",
+      "img": {
+        "imagenUno": "./woman-colection/a1.png",
+        "imagenDos": "./woman-colection/a2.png",
+        "imagenTres": "./woman-colection/a3.png",
+        "imagenCuatro": "./woman-colection/a4.png"
+      },
+      "idCategoria": 10
+    },
+    {
+      "id": 6,
+      "nombre": "Tenis Mujer 2",
+      "precio": "900000",
+      "img": {
+        "imagenUno": "./woman-colection/ad1.png",
+        "imagenDos": "./woman-colection/ad3.png",
+        "imagenTres": "./woman-colection/ad4.png"
+      },
+      "idCategoria": 10
+    },
+    {
+      "id": 7,
+      "nombre": "Tenis Mujer 3",
+      "precio": "1000000",
+      "img": {
+        "imagenUno": "./woman-colection/adi1.png",
+        "imagenDos": "./woman-colection/adi2.png",
+        "imagenTres": "./woman-colection/adi3.png",
+        "imagenCuatro": "./woman-colection/adi4.png"
+      },
+      "idCategoria": 10
+    },
+    {
+      "id": 8,
+      "nombre": "Tenis Mujer 4",
+      "precio": "2000000",
+      "img": {
+        "imagenUno": "./woman-colection/ddas1.png",
+        "imagenDos": "./woman-colection/ddas2.png",
+        "imagenTres": "./woman-colection/ddas3.png",
+        "imagenCuatro": "./woman-colection/ddas4.png"
+      },
+      "idCategoria": 10
+    },
+    {
+      "nombre": "prueba",
+      "precio": 9999,
+      "img": {
+        "imagenUno": "",
+        "imagenDos": "",
+        "imagenTres": "",
+        "imagenCuatro": ""
+      },
+      "idCategoria": 10,
+      "id": 11
+    },
+    {
+      "nombre": "prueba22",
+      "precio": 9999,
+      "img": {
+        "imagenUno": "",
+        "imagenDos": "",
+        "imagenTres": "",
+        "imagenCuatro": ""
+      },
+      "idCategoria": 10,
+      "id": 12
+    }
+  ],
+  "categorias": [
+    {
+      "id": 10,
+      "nombre": "Tenis mujer"
+    },
+    {
+      "id": 11,
+      "nombre": "Tenis hombre"
+    }
+  ],
+  "informacionCliente": [
+    {
+      "id": 30,
+      "nombre": "Maria Lopez",
+      "cedula": "9090909090",
+      "correo": "mlopez@gmail.com",
+      "numeroTarjeta": "5748537845"
+    },
+    {
+      "nombre": "Juan Perez",
+      "cedula": "32847824872",
+      "correo": "jperez@gmail.com",
+      "numeroTarjeta": "42342342",
+      "id": 31
+    }
+  ]
+}

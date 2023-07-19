@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+    <title>E-commerce product page</title>
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        .attribution {
+            font-size: 16px;
+            text-align: center;
+        }
+
+        .attribution {
+            color: hsl(228, 45%, 44%);
+        }
+    </style>
+</head>
+
+<body>
+
+    <main class="main">
+        <header class="header">
+
+            <div class="header__navegador">
+                <img class="menu" src="./images/icon-menu.svg" alt="menu icon">
+                <img class="logo" src="./images/logo.svg" alt="logo">
+
+                <nav class="iconos-head">
+                    <ul class="iconos-head__items">
+                        <li><a class="iconos-head__link"
+                                href="https://www.youtube.com/watch?v=RiB4mV3VnRY">Collections</a></li>
+                        <li><a class="iconos-head__link" href="#">Men</a></li>
+                        <li><a class="iconos-head__link" href="#">Women</a></li>
+                        <li><a class="iconos-head__link" href="#">About</a></li>
+                        <li><a class="iconos-head__link" href="#">Contact</a></li>
+                    </ul>
+
+                </nav>
+
+            </div>
+
+
+            <!-- // ! -- inicio modal navbar -- // -->
+            <div class="head-background">
+                <nav class="iconos-head2">
+                    <img class="iconos-head__close-icon" src="./images/icon-close.svg" alt="">
+                    <ul class="iconos-head__item">
+                        <li><a class="iconos-head__link" href="#">Collections</a></li>
+                        <li><a class="iconos-head__link" href="#">Men</a></li>
+                        <li><a class="iconos-head__link" href="#">Women</a></li>
+                        <li><a class="iconos-head__link" href="#">About</a></li>
+                        <li><a class="iconos-head__link" href="#">Contact</a></li>
+                    </ul>
+                </nav>
+
+            </div>
+            <!-- // ! -- final modal navbar -- // -->
+
+            <div class="header__cart-profile">
+                <div class="header_cart">
+                    <div class="header_cart--notification">3</div>
+                    <img src="./images/icon-cart.svg" alt="cart">
+                </div>
+                <img class="avatar" src="./images/image-avatar.png" alt="profile">
+            </div>
+        </header>
+
+        <section class="matter">
+            <article class="tunnel">
+                <div class="tunnel__image-container">
+                    <img class="tunnel__previous" src="./images/icon-previous.svg" alt="previous">
+                    <img class="tunnel__next" src="./images/icon-next.svg" alt="next">
+                </div>
+                <div class="tunnel__thumnails">
+                    <img id="1" class="tunnel__thumnail" src="./images/image-product-1-thumbnail.jpg" alt="thumnail">
+                    <img id="2" class="tunnel__thumnail" src="./images/image-product-2-thumbnail.jpg" alt="thumnail">
+                    <img id="3" class="tunnel__thumnail" src="./images/image-product-3-thumbnail.jpg" alt="thumnail">
+                    <img id="4" class="tunnel__thumnail" src="./images/image-product-4-thumbnail.jpg" alt="thumnail">
+                </div>
+            </article>
+
+            <article class="references">
+                <h2 class="reference__company">Sneaker Company</h2>
+                <h2 class="reference__title">Fall Limited Edition Sneakers</h2>
+                <p class="reference__description"> These low-profile sneakers are you perfect casual wear companion.
+                    Featuring a durable rubber outer sole, they'11 withstand everything the weather can offer.</p>
+                <div class="reference__prices">
+                    <p class="reference_now">$125.00<span class="details_discount">50%</span></p>
+                    <p class="reference__before"> $250.00</p>
+                </div>
+                <div class="reference__product-quantity">
+                    <div class="input">
+                        <img class="input__minus" src="./images/icon-minus.svg" alt="minus">
+                        <input class="input__number" type="text" value="0">
+                        <img class="input__plus" src="./images/icon-plus.svg" alt="plus">
+                    </div>
+                    <button class="reference__button">
+                        <img src="./images/icon-cart-white.svg" alt="button">Add to cart</button>
+                </div>
+            </article>
+
+        </section>
+
+        <!-- // ! -- inicio cart modal -- // -->
+        <div class="truck-modal">
+            <p class="truck-modal__title">Cart</p>
+            <div class="truck_modal__checkout-container">
+                <div class="truck_modal__deatils-container">
+                    <img class="truck-modal__image" src="./images/image-product-1-thumbnail.jpg" alt="uno">
+                    <div>
+                        <p class="truck-modal__product">Autumn Limited Edition..</p>
+                        <p class="truck-modal__price">$125 x3 <span>$375.00</span></p>
+                    </div>
+                    <img class="delete" src="./images/icon-delete.svg" alt="delete">
+                </div>
+                <button class="truck-modal__delete">Checkout</button>
+            </div>
+        </div>
+        </div>
+
+        <!-- // ! -- final cart modal -- // -->
+
+        <!-- // ! -- inicio gallery modal -- // -->
+        <div class="modal-tunnel__background">
+            <article class="modal-tunnel">
+                <img class="modal-tunnel__close" src="./images/icon-close.svg" alt="icon close">
+                <div class="modal-tunnel__image-container">
+                    <img class="modal-tunnel__previous" src="./images/icon-previous.svg" alt="previous">
+                    <img class="modal-tunnel__next" src="./images/icon-next.svg" alt="next">
+                </div>
+                <div class="modal-tunnel__thumnails">
+                    <img id="m1" class="modal-tunnel__thumnail" src="./images/image-product-1-thumbnail.jpg"
+                        alt="thumnail">
+                    <img id="m2" class="modal-tunnel__thumnail" src="./images/image-product-2-thumbnail.jpg"
+                        alt="thumnail">
+                    <img id="m3" class="modal-tunnel__thumnail" src="./images/image-product-3-thumbnail.jpg"
+                        alt="thumnail">
+                    <img id="m4" class="modal-tunnel__thumnail" src="./images/image-product-4-thumbnail.jpg"
+                        alt="thumnail">
+                </div>
+            </article>
+        </div>
+        <!-- // ! -- final gallery modal -- // -->
+
+
+    </main>
+
+    <!--     ModalChe  se llaman los datos del cliente  -->
+    <div class="ModalCheckout">
+        <form id="formulario">
+            <input type="text" id="Name" placeholder="Nombre ">
+            <label for="Nombre"></label>
+            <input type="text" id="identification" placeholder="cedula">
+            <label for="cedula"></label>
+            <input type="text" id="iphone" placeholder="Celular">
+            <label for="celular"></label>
+            <input type="text" id="email" placeholder="Correo">
+            <label for="Correo"></label>
+            <input type="text" id="credit-card" placeholder="Tarjeta de credito">
+            <label for="Tarjeta de credito"></label>
+            <label id="label-edit" for="id" class="form-label body1Regular label-edit">Id</label>
+            <input type="text" name="id" id="id" class="ms-1 edit body1Regular form-control">
+            <div>
+                <button id="truck-modal__delete" tabindex="0">Compra realizada</button>
+                <button id="truck-modal__guardar" tabindex="0">Guardar datos</button>
+                <button id="truck-modal__eliminar" tabindex="0">Eliminar datos</button>
+            </div>
+
+        </form>
+        <p id="warnings"></p>
+    </div>
+
+    <footer class="attribution">
+        Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>
+        Coded by <a href="#" target="_blank">
+            Camila Duque Jimenez
+            Cristian Camilo Arenas Lopez
+            Luis Eduardo Restrepo Posada
+            Angie Diaz
+        </a>
+    </footer>
+    <script src="script.js"></script>
+</body>
+
+</html>

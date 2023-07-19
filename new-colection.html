@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
+/>
+    <link rel="stylesheet" href="galerias.css">
+    
+    <title>gallery new colection</title>
+</head>
+
+ <body>
+
+    <header class="header">
+            
+        <div class="header__navegador">
+            <img class="menu"   src="./images/icon-menu.svg" alt="menu icon">
+            <img class="logo" src="./images/logo.svg" alt="logo">
+        
+            <nav class="iconos-head">
+                <ul class="iconos-head__items">
+                    <li><a class="iconos-head__link" href="new-colection.html">Collections</a></li>
+                    <li><a class="iconos-head__link" href="men-colection.html">Men</a></li>
+                    <li><a class="iconos-head__link" href="women-colection.html">Women</a></li>
+                    <li><a class="iconos-head__link" href="#">About</a></li>
+                    <li><a class="iconos-head__link" href="#">Contact</a></li>
+                </ul>  
+           
+            </nav>
+
+        </div>
+        
+         
+        
+
+        <!-- // ! -- inicio modal navbar -- // -->
+        <div class="head-background">
+            <nav class="iconos-head2">
+                <img class="iconos-head__close-icon" src="./images/icon-close.svg" alt="">
+                <ul class="iconos-head__item">
+                    <li><a class="iconos-head__link" href="#">Collections</a></li>
+                    <li><a class="iconos-head__link" href="#">Men</a></li>
+                    <li><a class="iconos-head__link" href="http://127.0.0.1:5500/women-colection.html">Women</a></li>
+                    <li><a class="iconos-head__link" href="#">About</a></li>
+                    <li><a class="iconos-head__link" href="#">Contact</a></li>
+                </ul>  
+            </nav>
+
+        </div>
+        <!-- // ! -- final modal navbar -- // -->
+
+        <div class="header__cart-profile">
+            <div class="header_cart">
+                <div class="header_cart--notification">3</div>
+                <img src="./images/icon-cart.svg" alt="cart">
+            </div>
+                <img class="avatar" src="./images/image-avatar.png" alt="profile">
+        </div>
+    </header>
+    <div class="swiper mySwiper" id="mySwipper">
+        <script>
+            const contenedorProductos = document.querySelector("#mySwipper");
+            const cargarProductos = async () => {
+                const url = "http://localhost:3000/productos"
+                fetch(url).then(res => res.json())
+                    .then(data => {
+                        console.log(data)
+                        data.forEach(producto => {
+                            const div = document.createElement("div");
+                            div.classList.add("producto");
+                            div.innerHTML = ` <div class="swiper-slide">
+
+                                <div class="icons">
+                                <i class="fa-solid fa-circle-arrow-left"></i>
+                                <img src="images/logo.svg" alt="">
+                                <i class="fa-regular fa-heart"></i>
+                                </div>
+                                <div class="product-content">
+                                <div class="product-txt">
+                                    <div class="produc-img">
+                                    <img src=${producto.img.imagenUno} alt="">
+                                </div>
+
+                                    <span>${producto.precio}</span>
+                                    <h3>${producto.nombre}</h3>
+                                    
+                                </div >
+
+                                </div>
+                                <a href="" class="btn-1">ver</a>
+                                </div>` ;
+
+                            contenedorProductos.append(div);
+                        });
+                    })
+            }
+
+            cargarProductos()
+        </script>
+     <!--     <div class="swiper-wraper">
+           
+           
+          Se comenta mientras se hacen pruebas de llamado a API
+            <div class="swiper-slide">
+
+                <div class="icons">
+                    <i class="fa-solid fa-circle-arrow-left"></i>
+                    <img src="images/logo.svg" alt="">
+                    <i class="fa-regular fa-heart"></i>
+                </div>
+                <div class="product-content">
+                    
+                    <div class="product-txt">
+                        <span>$300</span>
+                        <h3>tennis adidas</h3>
+                        
+                        
+                    </div >
+                    <div class="produc-img">
+                        <img src="./new-colection/1.webp" alt="">
+
+                    </div>
+                    
+
+                </div>
+                <a href="" class="btn-1">ver</a>
+            </div>
+            <div class="swiper-slide">
+
+                <div class="icons">
+                    <i class="fa-solid fa-circle-arrow-left"></i>
+                    <img src="images/logo.svg" alt="">
+                    <i class="fa-regular fa-heart"></i>
+                </div>
+                <div class="product-content">
+                    <div class="product-txt">
+                        <span>$250</span>
+                        <h3>tennis adidas</h3>
+                        
+                    </div >
+                    <div class="produc-img">
+                        <img src="new-colection/2.webp" alt="">
+
+                    </div>
+                    
+
+                </div>
+                <a href="" class="btn-1">ver</a>
+            </div>
+
+            <div class="swiper-slide">
+
+                <div class="icons">
+                    <i class="fa-solid fa-circle-arrow-left"></i>
+                    <img src="images/logo.svg" alt="">
+                    <i class="fa-regular fa-heart"></i>
+                </div>
+                <div class="product-content">
+                    <div class="product-txt">
+                        <span>$200</span>
+                        <h3>tennis adidas</h3>
+                        
+                    </div >
+                    <div class="produc-img">
+                        <img src="new-colection/3.webp" alt="">
+
+                    </div>
+                    
+
+                </div>
+                <a href="" class="btn-1">ver</a>
+            </div>
+
+            <div class="swiper-slide">
+
+                <div class="icons">
+                    <i class="fa-solid fa-circle-arrow-left"></i>
+                    <img src="images/logo.svg" alt="">
+                    <i class="fa-regular fa-heart"></i>
+                </div>
+                <div class="product-content">
+                    <div class="product-txt">
+                        <span>$300</span>
+                        <h3>tennis adidas</h3>
+                       
+                    </div >
+                    <div class="produc-img">
+                        <img src="new-colection/h1.webp" alt="">
+
+                    </div>
+                    
+
+                </div>
+                <a href="" class="btn-1">ver</a>
+            </div> -->
+
+        </div>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script>
+       let swiper = new Swiper(".mySwiper", {
+            effect: "coverflow",
+            
+            
+            grabCursor: true,
+            
+            
+            centeredSlides: true,
+            
+            
+            slidesPerView: "auto",
+            loop: true,
+            
+            
+            coverflowEffect: {
+                
+                
+            depth: 500,
+                
+            
+            modifier: 1,
+                
+            
+            slideShadows: true,
+                
+            
+            rotate: 0,
+                
+            
+            stretch: 0
+            }
+            });
+    </script>
+ </body>
