@@ -100,7 +100,7 @@ email.addEventListener("input", () => {
 console.log(" hola hermano")
 
 
-formulario.addEventListener("submit", async e => {
+ /* formulario.addEventListener("submit", async e => {
     e.preventDefault()
     let name = document.getElementById("Name").value
     let IDENTIFICACION = document.getElementById("identification").value
@@ -126,7 +126,15 @@ formulario.addEventListener("submit", async e => {
     let data = resp.json()
     console.log(data);
 
-})
+}) 
+ */
+let ocultar_formulario = document.querySelector(".formulario");
+document.getElementById("btn_cerrar").addEventListener("click", cerrar);
+function cerrar() {
+    ocultar_formulario.style.display = "none"
+    console.log("cerrar formulario")
+}
+
 
 
 /* btnCorreo.addEventListener('click', async () => {
