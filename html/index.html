@@ -149,11 +149,35 @@
 
     </main>
 
+    <!--  <script>
+        const body = {
+            "nombre": document.querySelector("#Name").value,
+            "cedula": document.querySelector("#identification").value,
+            "correo": document.querySelector("#phone").value,
+            "numeroTarjeta": document.querySelector("#credit-card").value,
+        }
+
+        const enviarInformacion = async() => {
+            const url = "http://localhost:3000/informacionCliente"
+            fetch(url,{
+                body: JSON.stringify(body),
+                method: "POST",
+                cache:"no-cache",
+                headers:{
+                    "Content-Type": "application/json"
+                }
+            })
+            .then(res => console.log(res))
+            .catch(err => alert("Algo salio mal :("))
+        }
+
+    </script> -->
+
     <!--     ModalChe  se llaman los datos del cliente  -->
-    <div class="ModalCheckout">
-        <form id="formulario">
+
+        <!-- <form id="formulario">
             <div id="btn_cerrrar">
-                <button >
+                <button>
                     <img src="../images/icon-close.svg" alt="">
                 </button>
             </div>
@@ -161,7 +185,7 @@
             <label for="Nombre"></label>
             <input type="text" id="identification" placeholder="cedula">
             <label for="cedula"></label>
-            <input type="text" id="iphone" placeholder="Celular">
+            <input type="text" id="phone" placeholder="Celular">
             <label for="celular"></label>
             <input type="text" id="email" placeholder="Correo">
             <label for="Correo"></label>
@@ -169,15 +193,32 @@
             <label for="Tarjeta de credito"></label>
             <label id="label-edit" for="id" class="form-label body1Regular label-edit">Id</label>
             <input type="text" name="id" id="id" class="ms-1 edit body1Regular form-control">
+            <button type="submit"> Guardar datos</button>
             <div>
-                <button id="truck-modal__delete" tabindex="0">Compra realizada</button>
-                <button type="submit" id="truck-modal__guardar" tabindex="0">Guardar datos</button>
-                <button id="truck-modal__eliminar" tabindex="0">Eliminar datos</button>
+                 <button id="truck-modal__delete" tabindex="0">Compra realizada</button>
+                <button type="submit">Guardar datos</button>
+                <button id="truck-modal__eliminar" tabindex="0">Eliminar datos</button> 
             </div>
 
+        </form> -->
+        <form id="formulario" class="p-3 mt-5 shadow border">
+            <h2 class="text-center text-primary">Formulario</h2>
+
+            <input id="nombre" class="form-control my-2" type="text" placeholder="ingrese su nombre">
+
+            <input id="identificacion" class="form-control my-2" type="text" placeholder="ingrese su identificacion">
+
+            <input id="email" class="form-control my-2" type="text" placeholder="ingrese su email">
+
+            <input id="celular" class="form-control my-2" type="text" placeholder="ingrese su celular">
+
+            <input id="numeroTarjeta" class="form-control my-2" type="text" placeholder="ingrese su numero de tarjeta">
+
+            <button class="btn btn-primary mt-2" type="submit">Enviar</button>
         </form>
+
         <p id="warnings"></p>
-    </div>
+ 
 
     <footer class="attribution">
         Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>
@@ -188,7 +229,12 @@
             Angie Diaz
         </a>
     </footer>
-    <script src="script.js"></script>
+    <script src="../formulario/app.js"></script>
+    <script>
+        const formulario = document.querySelector("#formulario")
+        console.log(fomulario)
+    </script>
+
 </body>
 
 </html>

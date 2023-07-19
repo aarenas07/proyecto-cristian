@@ -73,7 +73,7 @@ cartIconButton.addEventListener("click", () => {
 });
 //se va a crear funcion asyncrona
 
-let formulario = document.getElementById("formulario")
+let formulario1 = document.getElementById("formulario")
 let btnGuardar = document.getElementById("truck-modal__guardar")
 let btnEliminar = document.getElementById("truck-modal__eliminar")
 
@@ -128,12 +128,12 @@ console.log(" hola hermano")
 
 }) 
  */
-let ocultar_formulario = document.querySelector(".formulario");
+/* let ocultar_formulario = document.querySelector(".formulario");
 document.getElementById("btn_cerrar").addEventListener("click", cerrar);
 function cerrar() {
     ocultar_formulario.style.display = "none"
     console.log("cerrar formulario")
-}
+} */
 
 
 
@@ -389,7 +389,60 @@ form.addEventListener("submit", (event) => {
 
 
 
+/* POST json-server */
 
+const formulario = document.querySelector("#formulario");
+
+
+//crear evento
+
+formulario.addEventListener("submit", validarFormulario)
+
+
+
+//funciones
+function handleFetch (url, body) {
+    fetch(url, {
+        method: "POST",
+        body: body,
+        headers:{
+            "Content-Type": "application/json"
+        }
+
+    })
+        .then(res => res.json())
+        .then(data => console.log("data", data))
+        .catch(err => console.error(err))
+}
+
+
+function validarFormulario (e) {
+    e.preventDefault()
+    console.log("validando")
+    const url = "http://localhost:3000/informacionCliente"
+    const nombre = document.querySelector("#nombre").value
+    const identificacion = document.querySelector("#identificacion").value
+    const email = document.querySelector("#email").value
+    const celular = document.querySelector("#celular").value
+    const numeroTarjeta = document.querySelector("#numeroTarjeta").value
+    console.log(nombre, identificacion, email, celular, numeroTarjeta)
+
+    const body ={
+        "nombre": nombre,
+        "cedula": identificacion,
+        "email": email,
+        "celular": celular,
+        "numeroTarjeta": numeroTarjeta
+    }
+
+
+    const payload = JSON.stringify(body)
+
+    console.log("payload", payload)
+
+    handleFetch(url, payload)
+
+}
 
 
 
