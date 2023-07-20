@@ -1,0 +1,51 @@
+/* Estilos generales */
+body {
+  font-family: "Kumbh Sans", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+h1, h2 {
+  color: orange;
+  text-align: center;
+}
+
+p {
+  color: #333;
+  line-height: 1.5;
+}
+
+/* Estilos específicos para la sección "about" */
+#about {
+  background-color: #f9f9f9;
+  position: relative;
+  padding: 40px 0;
+}
+
+#about::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  width: 4px;
+  height: 80%;
+  background-color: orange;
+}
+
+#about::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  width: 4px;
+  height: 80%;
+  background-color: orange;
+}
