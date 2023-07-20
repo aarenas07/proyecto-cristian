@@ -7,6 +7,7 @@
     <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
     <title>E-commerce product page</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="sweetalert2.min.css">
 
     <style>
         .attribution {
@@ -106,7 +107,7 @@
         </section>
 
         <!-- // ! -- inicio cart modal -- // -->
-        <div class="truck-modal">
+        <div class="truck-modal" id="truck-modal">
             <p class="truck-modal__title">Cart</p>
             <div class="truck_modal__checkout-container">
                 <div class="truck_modal__deatils-container">
@@ -175,32 +176,13 @@
 
     <!--     ModalChe  se llaman los datos del cliente  -->
 
-        <!-- <form id="formulario">
-            <div id="btn_cerrrar">
-                <button>
-                    <img src="../images/icon-close.svg" alt="">
-                </button>
-            </div>
-            <input type="text" id="Name" placeholder="Nombre ">
-            <label for="Nombre"></label>
-            <input type="text" id="identification" placeholder="cedula">
-            <label for="cedula"></label>
-            <input type="text" id="phone" placeholder="Celular">
-            <label for="celular"></label>
-            <input type="text" id="email" placeholder="Correo">
-            <label for="Correo"></label>
-            <input type="text" id="credit-card" placeholder="Tarjeta de credito">
-            <label for="Tarjeta de credito"></label>
-            <label id="label-edit" for="id" class="form-label body1Regular label-edit">Id</label>
-            <input type="text" name="id" id="id" class="ms-1 edit body1Regular form-control">
-            <button type="submit"> Guardar datos</button>
-            <div>
-                 <button id="truck-modal__delete" tabindex="0">Compra realizada</button>
-                <button type="submit">Guardar datos</button>
-                <button id="truck-modal__eliminar" tabindex="0">Eliminar datos</button> 
-            </div>
+    <!-- Modal -->
 
-        </form> -->
+
+
+    <!--  -->
+
+    <div class="ModalCheckout" id="ModalCheckout">
         <form id="formulario" class="p-3 mt-5 shadow border">
             <h2 class="text-center text-primary">Formulario</h2>
 
@@ -214,11 +196,14 @@
 
             <input id="numeroTarjeta" class="form-control my-2" type="text" placeholder="ingrese su numero de tarjeta">
 
-            <button class="btn btn-primary mt-2" type="submit">Enviar</button>
+            <button class="btn btn-primary mt-2" id="btn_fetch" type="submit">Enviar</button>
         </form>
+        <button style="display: none;" id="btn_show_modal">Abrir modal</button>
+    </div>
 
-        <p id="warnings"></p>
- 
+
+    <p id="warnings"></p>
+
 
     <footer class="attribution">
         Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>
@@ -229,12 +214,9 @@
             Angie Diaz
         </a>
     </footer>
-    <script src="../formulario/app.js"></script>
-    <script>
-        const formulario = document.querySelector("#formulario")
-        console.log(fomulario)
-    </script>
-
+    <script src="./script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <!--<script src="../formulario/app.js"></script>-->
 </body>
 
 </html>

@@ -1,4 +1,98 @@
-console.log("alertaaaaaaaaaaaaaaaaaaaaaaaaaaaa")
+/* POST json-server */
+ 
+const formulario = document.querySelector("#formulario");
+
+
+//crear evento
+
+formulario.addEventListener("submit", validarFormulario)
+
+
+
+//funciones
+function handleFetch(url, body) {
+    fetch(url, {
+        method: "POST",
+        body: body,
+        headers: {
+            "Content-Type": "application/json"
+        }
+
+    })
+        .then(res => res.json())
+        .then(data => console.log("data", data))
+        .catch(err => console.error(err))
+}
+
+
+function validarFormulario(e) {
+    e.preventDefault()
+    console.log("validando")
+    const url = "http://localhost:3000/informacionCliente"
+    const nombre = document.querySelector("#nombre").value
+    const identificacion = document.querySelector("#identificacion").value
+    const email = document.querySelector("#email").value
+    const celular = document.querySelector("#celular").value
+    const numeroTarjeta = document.querySelector("#numeroTarjeta").value
+
+    const body = {
+        "nombre": nombre,
+        "cedula": identificacion,
+        "email": email,
+        "celular": celular,
+        "numeroTarjeta": numeroTarjeta
+    }
+
+
+    const payload = JSON.stringify(body)
+
+
+    handleFetch(url, payload)
+    
+    document.querySelector("#ModalCheckout").style.display = 'none';
+    document.querySelector("#truck-modal").style.display = 'none';
+
+
+    Swal.fire(
+        'Good job!',
+        'You clicked the button!',
+        'success'
+    )
+
+}
+
+ 
+
+const openModal = document.querySelector("#btn_show_modal")
+
+openModal.addEventListener("click", () => {
+    Swal.fire({
+        title: 'Login Form',
+        html: `<input type="text" id="login"  placeholder="Username">
+        <input type="password" id="password" placeholder="Password">
+        <button type="submit" onclick=validarFormulario()>
+        `,
+        confirmButtonText: 'sign in',
+
+        focusConfirm: false,
+        preConfirm: () => {
+            validarFormulario()
+            const login = Swal.getPopup().querySelector('#login').value
+            const password = Swal.getPopup().querySelector('#password').value
+            if (!login || !password) {
+                Swal.showValidationMessage(`Please enter login and password`)
+            }
+            return { login: login, password: password }
+        }
+    }).then((result) => {
+        Swal.fire(`
+          Hola
+        `.trim())
+    })
+
+})
+
+
 //se empieza con los + y -
 //se hixo el cambio de cantidad de articulos ingresado por el usuaro (parte add to card)
 
@@ -20,7 +114,6 @@ minusBtn.addEventListener("click", () => {
         userInputNumber = 0;
     }
     userInput.value = userInputNumber;
-    console.log("UserInputNumber");
 });
 
 //paso 2:  cuando se presiona el boton add to cart se agrega el producto al carrito ( parte superior)
@@ -32,7 +125,7 @@ let cartNotification = document.querySelector(".header_cart--notification");
 let lastValue = parseInt(cartNotification.innerText);
 
 //addTocartbutton genera una funcion
-addToCartButton.addEventListener("click", () => {
+ addToCartButton.addEventListener("click", () => {
     //el ineerText permite adicionar el texto que esta en la variable de userInputNumber (la cantidad que se haya agregado en add to cart)
 
     lastValue = lastValue + userInputNumber;
@@ -42,7 +135,7 @@ addToCartButton.addEventListener("click", () => {
     cartNotification.style.display = "block";
     drawProductInModal();
 
-});
+}); 
 
 //**************mostrar el modal con el detalle del carrito 
 const cartIconButton = document.querySelector(".header_cart");
@@ -73,7 +166,7 @@ cartIconButton.addEventListener("click", () => {
 });
 //se va a crear funcion asyncrona
 
-let formulario1 = document.getElementById("formulario")
+/* let formulario1 = document.getElementById("formulario-2") */
 let btnGuardar = document.getElementById("truck-modal__guardar")
 let btnEliminar = document.getElementById("truck-modal__eliminar")
 
@@ -97,100 +190,6 @@ email.addEventListener("input", () => {
 
 
 //SE VA A CAPTURAR INFORMACION DEL FORMULARIO 
-console.log(" hola hermano")
-
-
- /* formulario.addEventListener("submit", async e => {
-    e.preventDefault()
-    let name = document.getElementById("Name").value
-    let IDENTIFICACION = document.getElementById("identification").value
-    let email = document.getElementById("email").value
-
-
-    // el fetch se hace con el url del resources
-    let resp = await fetch(`http://localhost:3000/usuarios/`, {
-        method: "POST",
-        body: JSON.stringify({
-            nombre: name,
-            identificacion: IDENTIFICACION,
-            celular: iphone,
-            correo: email,
-            tarjetaCredito:""
-
-        }),
-        headers: {
-            "Content-Type": "application/json; charset=UTF-8"
-        }
-    })
-    console.log(resp);
-    let data = resp.json()
-    console.log(data);
-
-}) 
- */
-/* let ocultar_formulario = document.querySelector(".formulario");
-document.getElementById("btn_cerrar").addEventListener("click", cerrar);
-function cerrar() {
-    ocultar_formulario.style.display = "none"
-    console.log("cerrar formulario")
-} */
-
-
-
-/* btnCorreo.addEventListener('click', async () => {
-
-    document.getElementById('id').style.display = 'block'
-    document.getElementById('label-edit').style.display = 'block'
-
-    let email = document.getElementById('email').value
-
-    let resp = await fetch(`http://localhost:3000/usuarios/`)
-    let data = await resp.json()
-
-    let modificar = data.find(user => user.correo === email)
-    console.log(modificar);
-
-    const { nombre, apellido, correo, id } = modificar
-
-    document.getElementById('name').value = nombre
-    document.getElementById('lastName').value = apellido
-    document.getElementById('email').value = correo
-    document.getElementById('id').value = id
-})
-
-btnEditar.addEventListener('click', async () => {
-    let idModificar = document.getElementById('id').value
-    let nameModificar = document.getElementById('name').value
-    let lastNameModificar = document.getElementById('lastName').value
-    let emailModificar = document.getElementById('email').value
-
-    let resp = await fetch(`http://localhost:3000/usuarios/${idModificar}`, {
-        method: 'PUT',
-        body: JSON.stringify({
-            id: idModificar,
-            nombre: nameModificar,
-            apellido: lastNameModificar,
-            correo: emailModificar
-        }),
-        headers: {
-            "Content-Type": "application/json; charset=UTF-8"
-        }
-    })
-    let data = resp.json()
-    console.log(data);
-})
-
-//se va hacer la peticion eliminar 
-
-btnEliminar.addEventListener('click',()=>{
-    let idEliminar = document.getElementById('id').value
-    
-    let resp = fetch(`http://localhost:3000/usuarios/${idEliminar}`,{
-        method: 'DELETE'
-    })
-    let data = resp.json()
-    console.log(data);
-}) */
 
 
 
@@ -317,132 +316,6 @@ function drawProductInModal() {
 
 }
 
-
-
-
-
-
-
-
-
-
-// checkaut con localstorage***************
-/* const NameInput = document.getElementById('Name');
-const IdentificationInput = document.getElementById('identification');
-const form = document.querySelector('form');
-const parrafo = document.getElementById('warnings');
-
-// Escuchar el evento submit del formulario
-form.addEventListener("submit", (event) => {
-    event.preventDefault(); // Evitar que el formulario se envíe
-    //SE CREA UN ARRAY VACIO, PARA QUE GUARDE EN EL LOCAL,
-    const lista = JSON.parse(localStorage.getItem('userInfo')) || [];
-    let entrar = false;
-    let warnings = "";
-    if (NameInput.value.length < 3) {
-      warnings += `El nombre no es valido <br>`;
-      entrar = true;
-    }
-
-    if (IdentificationInput.value.length < 3) {
-      warnings += `La cedula ingresada no es valida <br>`;
-      entrar = true;
-    }
-    if (entrar) {
-      parrafo.innerHTML = warnings;
-    } else {
-      parrafo.innerHTML = "Enviado";
-      entrar=false;
-    }
-  if (!entrar) {
-    // Obtener los valores de los campos de entrada
-    const Name = NameInput.value;
-    const Identification = IdentificationInput.value;
-
-    // Crear un objeto con la información
-    const userInfo = {
-      Name: Name,
-      Identification: Identification,
-    };
-    lista.push(userInfo);
-    // Convertir el objeto en una cadena JSON
-    const userInfoJSON = JSON.stringify(lista);
-
-    // Almacenar la información en localStorage
-    localStorage.setItem('userInfo', userInfoJSON);
-
-    // Limpiar los campos de entrada
-    /* firstNameInput.value = '';
-    lastNameInput.value = '';
-    emailInput.value = '';
-    passwordInput.value = ''; */
-
-    // Mostrar un mensaje de éxito
-    //alert('Information stored successfully!');
-/*  }
- }) */
-/*   document.getElementsByClassName("ModalCheckout")[0].addEventListener("click", pagarClicked)
-  function pagarClicked(event){
-    alert("Gracias por su compra"); */
-
-    // eliminar todos los elemntos del carrito
-
-
-
-/* POST json-server */
-
-const formulario = document.querySelector("#formulario");
-
-
-//crear evento
-
-formulario.addEventListener("submit", validarFormulario)
-
-
-
-//funciones
-function handleFetch (url, body) {
-    fetch(url, {
-        method: "POST",
-        body: body,
-        headers:{
-            "Content-Type": "application/json"
-        }
-
-    })
-        .then(res => res.json())
-        .then(data => console.log("data", data))
-        .catch(err => console.error(err))
-}
-
-
-function validarFormulario (e) {
-    e.preventDefault()
-    console.log("validando")
-    const url = "http://localhost:3000/informacionCliente"
-    const nombre = document.querySelector("#nombre").value
-    const identificacion = document.querySelector("#identificacion").value
-    const email = document.querySelector("#email").value
-    const celular = document.querySelector("#celular").value
-    const numeroTarjeta = document.querySelector("#numeroTarjeta").value
-    console.log(nombre, identificacion, email, celular, numeroTarjeta)
-
-    const body ={
-        "nombre": nombre,
-        "cedula": identificacion,
-        "email": email,
-        "celular": celular,
-        "numeroTarjeta": numeroTarjeta
-    }
-
-
-    const payload = JSON.stringify(body)
-
-    console.log("payload", payload)
-
-    handleFetch(url, payload)
-
-}
 
 
 

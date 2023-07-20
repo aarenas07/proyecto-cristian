@@ -68,7 +68,7 @@
             const subirId = (arg) => {
                 localStorage.setItem("idProducto", arg)
             }
-            const cargarProductos = async () => {
+            const cargarProductos = () => {
                 const url = "http://localhost:3000/productos"
                 fetch(url).then(res => res.json())
                     .then(data => {

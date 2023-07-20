@@ -25,14 +25,12 @@ function llamadoApi (url, body) {
 
 function validarFormulario (e) {
     e.preventDefault()
-    console.log("validando")
     const url = "http://localhost:3000/informacionCliente"
     const nombre = document.querySelector("#nombre").value
     const identificacion = document.querySelector("#identificacion").value
     const email = document.querySelector("#email").value
     const celular = document.querySelector("#celular").value
     const numeroTarjeta = document.querySelector("#numeroTarjeta").value
-    console.log(nombre, identificacion, email, celular, numeroTarjeta)
 
     const body ={
         "nombre": nombre,
@@ -45,9 +43,11 @@ function validarFormulario (e) {
 
     const payload = JSON.stringify(body)
 
-    console.log("payload", payload)
 
     llamadoApi(url, payload)
 
+
 }
+
+
 

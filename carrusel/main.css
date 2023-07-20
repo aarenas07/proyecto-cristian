@@ -24,9 +24,14 @@ body{
     font-family: "kumbh Sans", sans-serif;
 }
 
+.container1{
+    width: 50%;
+    border: 1px solid black;
+}
+
 .main{
     width: 446px;
-   /*  border: 1px solid black; */
+    /*border: 1px solid black;*/
     margin: auto;
     position: relative;
 }
@@ -91,9 +96,9 @@ body{
     width: 15px;
     height: 12px;
     border-radius: 16px;
-   /*  position: absolute; */
-    top: 5px;
-    right: 5px;
+    position: absolute;
+    top: -2px;
+    right: -5px;
     font-size: 0.6em;
     text-align: center;
     color: var(--white);
@@ -112,7 +117,7 @@ cursor: pointer;
     border-radius: 50%;
 }
 
-/* /nav/ */
+/*nav*/
 .iconos-head{
     display: none;
     width: 400px;
@@ -140,7 +145,7 @@ cursor: pointer;
     border-bottom: 4px solid var(--orange);
 }
 .head-background{
- /*    /background-color: var(--black-modal);/ */
+    /*background-color: var(--black-modal);*/
     position: absolute;
     top: 0;
     left: 0;
@@ -148,7 +153,8 @@ cursor: pointer;
     height: 100%;
     z-index: 1;
     display: none;
-    
+   /*  display: grid;
+    place-content: center; */
 }
 .iconos-head2{
     background-color: var(--white);
@@ -202,7 +208,7 @@ background-color: var(--white);
 .tunnel__image-container{
     height: 300px;
     width: 100%;
-    background-image:url("./images/image-product-1.jpg");
+    background-image:url("./coleccion-hombres/a1.webp");
     background-position-y:-35px ;
     background-size: cover;
 }
@@ -261,9 +267,9 @@ background-color: var(--white);
     } 
 }
 
-.tunnel__thumnails{
+/* .tunnel__thumnails{
     display: none;
-}
+} */
 @media (min-width: 1115px){
     .tunnel__thumnails{
         display: flex;
@@ -289,6 +295,8 @@ background-color: var(--white);
         padding-top: 60px;
     } 
 }
+
+
 .reference__company{
     color: var(--orange);
     text-transform: uppercase;
@@ -329,7 +337,8 @@ background-color: var(--white);
 @media (min-width: 1115px){
     .reference__prices{
         flex-direction: column;
-        align-items: flex-start; 
+        align-items: flex-start;
+        
     } 
 }
 .reference_now{
@@ -355,6 +364,7 @@ background-color: var(--white);
     @media (min-width: 1115px){
         display: flex;
         gap: 32px;
+
     }
 }
 .input{
@@ -436,7 +446,7 @@ background-color: var(--white);
 }
 .truck-modal__image{
     width: 50px;
-/*     /height: 50px; */
+    /*height: 50px;*/
     border-radius: 4px;
     align-items: center;
     justify-content: space-between;
@@ -471,7 +481,8 @@ background-color: var(--white);
     @media (min-width: 1115px){
         display: flex;
         padding: 90px 50px;
-        gap: 124px; 
+        gap: 124px;
+        
     }
 }
 .modal-tunnel__background{
@@ -487,7 +498,7 @@ background-color: var(--white);
     height: 100%;
     z-index: 1;
     display: none;
-/*     /display: grid;/ */
+    /*display: grid;*/
     place-content: center;
 }
 .modal-tunnel__close-container{
@@ -533,6 +544,7 @@ background-color: var(--white);
     position: absolute;
     top: 190px;
     left: 15px;
+    
 }
 .modal-tunnel__previous:hover{
     cursor: pointer;
@@ -562,68 +574,192 @@ background-color: var(--white);
     } 
 }
 
-.show{
-    display: block;
+
+/* Trabajo Alejandro */
+.contendor-productos {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
 }
-.cart-empty{
-    font-weight: 700;
-    color: var(--black-modal);
+
+
+
+/* Carrusel */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/*  */
+
+/*Efecto*/
+.modalmask {
+    position: fixed;
+    font-family: Arial, sans-serif;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0,0,0,0.8);
+    z-index: 99999;
+    opacity:0;
+    -webkit-transition: opacity 400ms ease-in;
+    -moz-transition: opacity 400ms ease-in;
+    transition: opacity 400ms ease-in;
+    pointer-events: none;
+}
+.modalmask:target {
+    opacity:1;
+    pointer-events: auto;
+}
+
+/*Formato de la ventana*/
+.modalbox{
+    width: 400px;
+    position: relative;
+    padding: 5px 20px 13px 20px;
+    background: #fff;
+    border-radius:3px;
+    -webkit-transition: all 500ms ease-in;
+    -moz-transition: all 500ms ease-in;
+    transition: all 500ms ease-in;
+     
+}
+
+/*Movimientos*/
+.movedown {
+    margin: 0 auto;
+}
+.rotate {
+    margin: 10% auto;
+    -webkit-transform: scale(-5,-5);
+    transform: scale(-5,-5);
+}
+.resize {
+    margin: 10% auto;
+    width:0;
+    height:0;
+ 
+}
+.modalmask:target .movedown{       
+    margin:10% auto;
+}
+.modalmask:target .rotate{     
+    transform: rotate(360deg) scale(1,1);
+        -webkit-transform: rotate(360deg) scale(1,1);
+}
+ 
+.modalmask:target .resize{
+    width:400px;
+    height:200px;
+}
+
+/*Boton de cerrar*/
+.close {
+    background: #606061;
+    color: #FFFFFF;
+    line-height: 25px;
+    position: absolute;
+    right: 1px;
     text-align: center;
-    margin-top: 30px;
+    top: 1px;
+    width: 24px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius:3px;
+ 
+}
+ 
+.close:hover {
+    background: #FAAC58;
+    color:#222;
 }
 
-.ModalCheckout{
-    background-color: hsla(0deg, 0%, 0%, 0.5);
+
+/*  */
+
+
+.contendor-productos {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+}
+
+.producto-imagen {
+    max-width: 100%;
+}
+
+
+
+.otherImages {
+    display: flex;
+    width: 43%;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.imagen1,
+.imagen2,
+.imagen3,
+.content-imagen1 {
+    display: flex;
+    margin: 0;
+}
+
+.close-button {
+    justify-content: end;
+    display: flex;
+    margin: 1rem 0;
+    width: 20%;
+}
+
+a.openModal { 
+    margin: 1em auto; 
+    display: block; 
+    width: 200px; 
+    background: #ccc; 
+    text-align: center; 
+    text-decoration: none; 
+    color: black; 
+    padding: 10px; 
+    text-shadow: 0 1px 0 #fff; 
+    border: 1px solid rgba(0,0,0,0.1); 
+    box-shadow: 0 1px 1px rgba(0,0,0,0.3); 
+}
+
+
+
+
+.itemCarrusel {
+    height: 300px;
+    position: relative;
+}
+
+.tarjetaCarrusel {
+    background-color: blanchedalmond;
+    height: 100%;
+}
+
+.flechasCarrusel {
+    height: 100%;
+    position: absolute;
+    top: 0;
     width: 100%;
-    height: 118%;   
-    position:absolute;
-    top:0;
-    left:0;;
-   display:none;  
-
-}
-form{
-    background-color: var(--white);
     display: flex;
     align-items: center;
-/*     justify-content:center; */
-    place-content: center; 
-    flex-direction: column;  
- /*   position: relative;  */
-    width: 25%;
-    padding: 1.5em;
-    gap: 0.8em;
-    border-radius:10px
+    justify-content: space-between;
+    padding: 20px;
 }
 
-input {
-    border: 1.5px solid gainsboro;
-    padding: 1em 2em;
-    border-radius: 5px;  
+#contentItemsCarrusel {
+    height: 300px;
+    overflow: hidden;
+    width: 42%;
 }
 
-label {
-    font-size: .6em;
-
-        /* position: absolute; */
-        top: 7.6em;
-        right: 2.5em;
-        color: Red; 
-}
-
-button {
-    padding: 1.5em;
-    background-color: var(--orange);
-    border: none;
-    color: white;
-    font-weight: 600;
-    border-radius: 4px;
-    box-shadow: 3px 5px 5px 0px rgba(0, 0, 0, 0.219);
-    border-bottom: 3px solid rgba(0, 0, 0, 0.082);
-    cursor: pointer;
-} 
  
 
-
-/* --------- */
-
+a {
+    text-decoration: none;
+}

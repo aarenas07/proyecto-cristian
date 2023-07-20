@@ -220,8 +220,7 @@ form.addEventListener("submit", (event) => {
  }) */
 /*   document.getElementsByClassName("ModalCheckout")[0].addEventListener("click", pagarClicked)
   function pagarClicked(event){
-    alert("Gracias por su compra"); */
-
+    alert("Gracias por su compra"); } */
 // eliminar todos los elemntos del carrito
 
 
