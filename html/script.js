@@ -1,5 +1,5 @@
 /* POST json-server */
- 
+
 const formulario = document.querySelector("#formulario");
 
 
@@ -25,6 +25,7 @@ function handleFetch(url, body) {
 }
 
 
+
 function validarFormulario(e) {
     e.preventDefault()
     console.log("validando")
@@ -48,20 +49,19 @@ function validarFormulario(e) {
 
 
     handleFetch(url, payload)
-    
-    document.querySelector("#ModalCheckout").style.display = 'none';
-    document.querySelector("#truck-modal").style.display = 'none';
 
+    document.querySelector("#ModalCheckout").style.display = 'none';
+    /* document.querySelector("#truck-modal").style.display = 'none'; */
 
     Swal.fire(
-        'Good job!',
-        'You clicked the button!',
+        '¡Compra exitosa!',
+        'Gracias por tu compra',
         'success'
     )
 
 }
 
- 
+
 
 const openModal = document.querySelector("#btn_show_modal")
 
@@ -125,7 +125,7 @@ let cartNotification = document.querySelector(".header_cart--notification");
 let lastValue = parseInt(cartNotification.innerText);
 
 //addTocartbutton genera una funcion
- addToCartButton.addEventListener("click", () => {
+addToCartButton.addEventListener("click", () => {
     //el ineerText permite adicionar el texto que esta en la variable de userInputNumber (la cantidad que se haya agregado en add to cart)
 
     lastValue = lastValue + userInputNumber;
@@ -135,7 +135,7 @@ let lastValue = parseInt(cartNotification.innerText);
     cartNotification.style.display = "block";
     drawProductInModal();
 
-}); 
+});
 
 //**************mostrar el modal con el detalle del carrito 
 const cartIconButton = document.querySelector(".header_cart");
@@ -315,6 +315,8 @@ function drawProductInModal() {
     priceModal.innerHTML = `$125 x${lastValue} <span>$${lastValue * 125}.00</span>`;
 
 }
+
+
 
 
 

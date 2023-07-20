@@ -1,26 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link
-  rel="stylesheet"
-  href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
-/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
     <link rel="stylesheet" href="galerias.css">
-    
+
     <title>gallery new colection</title>
 </head>
 
- <body>
+<body>
 
     <header class="header">
-            
+
         <div class="header__navegador">
-            <img class="menu"   src="./images/icon-menu.svg" alt="menu icon">
+            <img class="menu" src="./images/icon-menu.svg" alt="menu icon">
             <img class="logo" src="./images/logo.svg" alt="logo">
-        
+
             <nav class="iconos-head">
                 <ul class="iconos-head__items">
                     <li><a class="iconos-head__link" href="new-colection.html">Collections</a></li>
@@ -28,14 +28,14 @@
                     <li><a class="iconos-head__link" href="women-colection.html">Women</a></li>
                     <li><a class="iconos-head__link" href="#">About</a></li>
                     <li><a class="iconos-head__link" href="#">Contact</a></li>
-                </ul>  
-           
+                </ul>
+
             </nav>
 
         </div>
-        
-         
-        
+
+
+
 
         <!-- // ! -- inicio modal navbar -- // -->
         <div class="head-background">
@@ -47,7 +47,7 @@
                     <li><a class="iconos-head__link" href="http://127.0.0.1:5500/women-colection.html">Women</a></li>
                     <li><a class="iconos-head__link" href="#">About</a></li>
                     <li><a class="iconos-head__link" href="#">Contact</a></li>
-                </ul>  
+                </ul>
             </nav>
 
         </div>
@@ -58,7 +58,7 @@
                 <div class="header_cart--notification">3</div>
                 <img src="./images/icon-cart.svg" alt="cart">
             </div>
-                <img class="avatar" src="./images/image-avatar.png" alt="profile">
+            <img class="avatar" src="./images/image-avatar.png" alt="profile">
         </div>
     </header>
     <div class="swiper mySwiper" id="mySwipper">
@@ -90,7 +90,12 @@
                                     <h3>${producto.nombre}</h3>
                                 </div >
                                 </div>
-                                <button onclick="subirId(${producto.id})"><li><a href="product-detail.html">Ver</a></li></button>
+                                <div class="buttons_container">
+                                    <a href="product-detail.html"><button class="button_view_product" onclick="subirId(${producto.id})">Ver</button></a>
+                                <button class="button_add_cart reference__button">
+                                    <img src="./images/icon-cart.svg" alt="button">Add to cart
+                                </button>
+                                    </div>
                                 </div>` ;
 
                             contenedorProductos.append(div);
@@ -100,7 +105,7 @@
 
             cargarProductos()
         </script>
-     <!--     <div class="swiper-wraper">
+        <!--     <div class="swiper-wraper">
            
            
           Se comenta mientras se hacen pruebas de llamado a API
@@ -197,43 +202,44 @@
                 <a href="" class="btn-1">ver</a>
             </div> -->
 
-        </div>
+    </div>
     </div>
 
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script src="./html/script.js"></script>
     <script>
-       let swiper = new Swiper(".mySwiper", {
+        let swiper = new Swiper(".mySwiper", {
             effect: "coverflow",
-            
-            
+
+
             grabCursor: true,
-            
-            
+
+
             centeredSlides: true,
-            
-            
+
+
             slidesPerView: "auto",
             loop: true,
-            
-            
+
+
             coverflowEffect: {
-                
-                
-            depth: 500,
-                
-            
-            modifier: 1,
-                
-            
-            slideShadows: true,
-                
-            
-            rotate: 0,
-                
-            
-            stretch: 0
+
+
+                depth: 500,
+
+
+                modifier: 1,
+
+
+                slideShadows: true,
+
+
+                rotate: 0,
+
+
+                stretch: 0
             }
-            });
+        });
     </script>
- </body>
+</body>

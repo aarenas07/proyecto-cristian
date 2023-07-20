@@ -22,11 +22,20 @@
 
 body{
     font-family: "kumbh Sans", sans-serif;
+    display: flex;
+    padding: 111px;
 }
 
-.container1{
+.container1,
+.container2{
     width: 50%;
     border: 1px solid black;
+}
+
+.reference__product-quantity{
+    display: flex;
+    gap: 2rem;
+
 }
 
 .main{
@@ -694,7 +703,7 @@ background-color: var(--white);
 
 .otherImages {
     display: flex;
-    width: 43%;
+    width: 100%;
     gap: 1rem;
     margin-top: 1rem;
 }
@@ -755,7 +764,7 @@ a.openModal {
 #contentItemsCarrusel {
     height: 300px;
     overflow: hidden;
-    width: 42%;
+    width: 100%;
 }
 
  

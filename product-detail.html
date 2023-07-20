@@ -14,7 +14,7 @@
     <title>gallery new colection</title>
 </head>
 
-<body>
+<body id="body">
 
     <header class="header">
 
@@ -62,142 +62,158 @@
             <img class="avatar" src="./images/image-avatar.png" alt="profile">
         </div>
     </header>
-    <div class="swiper mySwiper" id="mySwipper">
-        <script>
-            const contenedorProductos = document.querySelector("#mySwipper");
-            const redirect = "../product-detail/index.html"
-            let idProducto = localStorage.getItem("idProducto")
-            const cargarProductos = async () => {
-                const url = `http://localhost:3000/productos/${idProducto}`
-                fetch(url).then(res => res.json())
-                    .then(data => {
-                        const div = document.createElement("div");
-                        div.classList.add("producto");
-                        /* div.innerHTML = ` <div class="swiper-slide">
-                            <div class="icons">
-                            <i class="fa-solid fa-circle-arrow-left"></i>
-                            <img src="images/logo.svg" alt="">
-                            <i class="fa-regular fa-heart"></i>
-                            </div>
-                            <div class="product-content">
-                            <div class="product-txt">
-                                <div class="produc-img">
-                                <img src=${data.img.imagenUno} alt="">
-                            </div>
-                                <span>${data.precio}</span>
-                                <h3>${data.nombre}</h3>
-                            </div >
-                            </div>
-                            </div>` ; */
-
-
-                        div.innerHTML = ` 
-                        <main class="main">
-       
-
-        <section class="matter">
-            <article class="tunnel">
-                <div class="tunnel__image-container">
-                    <img id="1"  src=${data.img.imagenUno} alt="thumnail">
-
-                    <img class="tunnel__previous" src="./images/icon-previous.svg" alt="previous">
-                    <img class="tunnel__next" src="./images/icon-next.svg" alt="next">
-                </div>
-                <div class="tunnel__thumnails">
-                    <img id="1" class="tunnel__thumnail" src=${data.img.imagenUno} alt="thumnail">
-                    <img id="2" class="tunnel__thumnail" src=${data.img.imagenDos} alt="thumnail">
-                    <img id="3" class="tunnel__thumnail" src=${data.img.imagenTres} alt="thumnail">
-                    <img id="4" class="tunnel__thumnail" src=${data.img.imagenCuatro} alt="thumnail">
-                </div>
-            </article>
-
-            <article class="references">
-                <h2 class="reference__company">Sneaker Company</h2>
-                <h2 class="reference__title">${data.nombre}</h2>
-                <p class="reference__description"> These low-profile sneakers are you perfect casual wear companion.
-                    Featuring a durable rubber outer sole, they'11 withstand everything the weather can offer.</p>
-                <div class="reference__prices">
-                    <p class="reference_now">$${data.precio}<span class="details_discount">50%</span></p>
-                    <p class="reference__before"> $250.00</p>
-                </div>
-                <div class="reference__product-quantity">
-                    <div class="input">
-                        <img class="input__minus" src="./images/icon-minus.svg" alt="minus">
-                        <input class="input__number" type="text" value="0">
-                        <img class="input__plus" src="./images/icon-plus.svg" alt="plus">
+    <script>
+        const contenedorProductos = document.querySelector("#body");
+        const redirect = "../product-detail/index.html"
+        let idProducto = localStorage.getItem("idProducto")
+        const cargarProductos = async () => {
+            const url = `http://localhost:3000/productos/${idProducto}`
+            fetch(url).then(res => res.json())
+                .then(data => {
+                    const div = document.createElement("div");
+                    div.classList.add("producto");
+                    div.innerHTML = `
+                         <div class="container1">
+        <div id="contentItemsCarrusel">
+            <div class="itemCarrusel" id="itemCarrusel1">
+                <div class="tarjetaCarrusel" id="tarjetaCarrusel1">
+                    <div class="imagen1">
+                        <img class="producto-imagen" src=${data.img.imagenUno} alt="">
                     </div>
-                    <button class="reference__button">
-                        <img src="./images/icon-cart-white.svg" alt="button">Add to cart</button>
                 </div>
-            </article>
-
-        </section>
-
-        <!-- // ! -- inicio cart modal -- // -->
-        <div class="truck-modal">
-            <p class="truck-modal__title">Cart</p>
-            <div class="truck_modal__checkout-container">
-                <div class="truck_modal__deatils-container">
-                    <img class="truck-modal__image" src="./images/image-product-1-thumbnail.jpg" alt="uno">
-                    <div>
-                        <p class="truck-modal__product">Autumn Limited Edition..</p>
-                        <p class="truck-modal__price">$125 x3 <span>$375.00</span></p>
+                <div class="flechasCarrusel">
+                    <a href="#itemCarrusel3">
+                        <i>
+                            <img class="producto-imagen" src="./images/icon-previous.svg" alt="">
+                        </i>
+                    </a>
+                    <a href="#itemCarrusel2">
+                        <i>
+                            <img src="./images/icon-next.svg" alt="">
+                        </i>
+                    </a>
+                </div>
+            </div>
+            <div class="itemCarrusel" id="itemCarrusel2">
+                <div class="tarjetaCarrusel" id="tarjetaCarrusel2">
+                    <div class="imagen1">
+                        <img class="producto-imagen" src=${data.img.imagenDos} alt="">
                     </div>
-                    <img class="delete" src="./images/icon-delete.svg" alt="delete">
                 </div>
-                <button class="truck-modal__delete">Checkout</button>
+                <div class="flechasCarrusel">
+                    <a href="#itemCarrusel1">
+                        <i>
+                            <img src="./images/icon-previous.svg" alt="">
+                        </i>
+                    </a>
+                    <a href="#itemCarrusel3">
+                        <i>
+                            <img src="./images/icon-next.svg" alt="">
+                        </i>
+                    </a>
+                </div>
+            </div>
+            <div class="itemCarrusel" id="itemCarrusel3">
+                <div class="tarjetaCarrusel" id="tarjetaCarrusel3">
+                    <div class="imagen1">
+                        <img class="producto-imagen" src=${data.img.imagenTres} alt="">
+                    </div>
+                </div>
+                <div class="flechasCarrusel">
+                    <a href="#itemCarrusel2">
+                        <i>
+                            <img src="./images/icon-previous.svg" alt="">
+
+                        </i>
+                    </a>
+                    <a href="#itemCarrusel4">
+                        <i>
+                            <img src="./images/icon-next.svg" alt="">
+
+                        </i>
+                    </a>
+                </div>
+            </div>
+            <div class="itemCarrusel" id="itemCarrusel4">
+                <div class="tarjetaCarrusel" id="tarjetaCarrusel4">
+                    <div class="imagen1">
+                        <img class="producto-imagen" src=${data.img.imagenCuatro} alt="">
+                    </div>
+                </div>
+                <div class="flechasCarrusel">
+                    <a href="#itemCarrusel3">
+                        <i>
+                            <img src="./images/icon-previous.svg" alt="">
+
+                        </i>
+                    </a>
+                    <a href="#itemCarrusel1">
+                        <i>
+                            <img src="./images/icon-next.svg" alt="">
+
+                        </i>
+                    </a>
+                </div>
             </div>
         </div>
+        <div class="otherImages">
+            <div class="imagen1">
+                <a href="#itemCarrusel1">
+                    <img class="producto-imagen" src=${data.img.imagenUno} alt="">
+                </a>
+            </div>
+            <div class="imagen1">
+                <a href="#itemCarrusel2">
+                    <img class="producto-imagen" src=${data.img.imagenDos} alt="">
+                </a>
+            </div>
+            <div class="imagen2">
+                <a href="#itemCarrusel3">
+                    <img class="producto-imagen" src=${data.img.imagenTres} alt="">
+                </a>
+            </div>
+            <div class="imagen3">
+                <a href="#itemCarrusel4">
+                    <img class="producto-imagen" src=${data.img.imagenCuatro} alt="">
+                </a>
+            </div>
         </div>
+    </div>
 
-        <!-- // ! -- final cart modal -- // -->
+    <!--  -->
 
-        <!-- // ! -- inicio gallery modal -- // -->
-        <div class="modal-tunnel__background">
-            <article class="modal-tunnel">
-                <img class="modal-tunnel__close" src="./images/icon-close.svg" alt="icon close">
-                <div class="modal-tunnel__image-container">
-                    <img class="modal-tunnel__previous" src="./images/icon-previous.svg" alt="previous">
-                    <img id="1" class="tunnel__thumnail" src=${data.img.imagenUno} alt="thumnail">
-                    <img class="modal-tunnel__next" src="./images/icon-next.svg" alt="next">
+
+    <div class="container2">
+        <article class="references">
+            <h2 class="reference__company">Sneaker Company</h2>
+            <h2 class="reference__title">${data.nombre}</h2>
+            <p class="reference__description">${data.descripcion}</p>
+            <div class="reference__prices">
+                <p class="reference_now">$${data.precio}<span class="details_discount">50%</span></p>
+                <p class="reference__before"> $250.00</p>
+            </div>
+            <div class="reference__product-quantity">
+                <div class="input">
+                    <img class="input__minus" src="./images/icon-minus.svg" alt="minus">
+                    <input class="input__number" type="text" value="0">
+                    <img class="input__plus" src="./images/icon-plus.svg" alt="plus">
                 </div>
-                <div class="modal-tunnel__thumnails">
-                    <img id="2" class="tunnel__thumnail" src=${data.img.imagenDos} alt="thumnail">
-                    <img id="3" class="tunnel__thumnail" src=${data.img.imagenTres} alt="thumnail">
-                    <img id="4" class="tunnel__thumnail" src=${data.img.imagenCuatro} alt="thumnail">
-                </div>
-            </article>
-        </div>
-        <!-- // ! -- final gallery modal -- // -->
-        <div class="modal-tunnel__background">
-            <article class="modal-tunnel">
-                <img class="modal-tunnel__close" src="./images/icon-close.svg" alt="icon close">
-                <div class="modal-tunnel__image-container">
-                    <img id="1" class="tunnel__thumnail" src=${data.img.imagenUno} alt="thumnail">
-                    <img class="modal-tunnel__previous" src="./images/icon-previous.svg" alt="previous">
-                    <img class="modal-tunnel__next" src="./images/icon-next.svg" alt="next">
-                </div>
-                <div class="modal-tunnel__thumnails">
-                    <img id="1" class="tunnel__thumnail" src=${data.img.imagenUno} alt="thumnail">
-                    <img id="2" class="tunnel__thumnail" src=${data.img.imagenDos} alt="thumnail">
-                    <img id="3" class="tunnel__thumnail" src=${data.img.imagenTres} alt="thumnail">
-                    <img id="4" class="tunnel__thumnail" src=${data.img.imagenCuatro} alt="thumnail">
-                </div>
-            </article>
-        </div>
+                <button class="reference__button">
+                    <img src="./images/icon-cart.svg" alt="button">Add to cart</button>
+            </div>
+        </article>
+    </div> ` ;
 
+                    contenedorProductos.append(div);
+                })
+        }
 
-    </main>` ;
-
-                        contenedorProductos.append(div);
-                    })
-            }
-
-            cargarProductos()
-        </script>
+        cargarProductos()
+    </script>
     </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script src="./script.js"></script>
     <script>
         let swiper = new Swiper(".mySwiper", {
             effect: "coverflow",

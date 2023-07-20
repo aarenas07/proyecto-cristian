@@ -64,6 +64,9 @@
     <div class="swiper mySwiper" id="mySwipper">
         <script>
             const contenedorProductos = document.querySelector("#mySwipper");
+            const subirId = (arg) => {
+                localStorage.setItem("idProducto", arg)
+            }
             const cargarProductos = async () => {
                 const url = "http://localhost:3000/productos?idCategoria=10"
                 fetch(url).then(res => res.json())
@@ -92,7 +95,7 @@
 </div >
 
 </div>
-<a href="" class="btn-1">ver</a>
+<button onclick="subirId(${producto.id})"><li><a href="product-detail.html">Ver</a></li></button>
 </div>` ;
 
                             contenedorProductos.append(div);

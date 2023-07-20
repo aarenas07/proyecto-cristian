@@ -4,6 +4,7 @@
       "id": 1,
       "nombre": "Tenis hombre 1",
       "precio": "30000",
+      "descripcion": "¡Aprovecha hoy! Conoce en adidas tu calzado deportivo favorito y haz tu estilo único. Únete a adiClub y obtén 20% de dto. Envío a todo Ecuador. Seguimiento de pedido",
       "img": {
         "imagenUno": "./new-colection/1.png",
         "imagenDos": "./new-colection/1.1.png",
@@ -16,6 +17,7 @@
       "id": 2,
       "nombre": "Tenis hombre 2",
       "precio": "40000",
+      "descripcion": "¡Aprovecha hoy! Conoce en adidas tu calzado deportivo favorito y haz tu estilo único. Únete a adiClub y obtén 20% de dto. Envío a todo Ecuador. Seguimiento de pedido",
       "img": {
         "imagenUno": "./new-colection/2.png",
         "imagenDos": "./new-colection/2.1.png",
@@ -28,6 +30,7 @@
       "id": 3,
       "nombre": "Tenis hombre 3",
       "precio": "50000",
+      "descripcion": "¡Aprovecha hoy! Conoce en adidas tu calzado deportivo favorito y haz tu estilo único. Únete a adiClub y obtén 20% de dto. Envío a todo Ecuador. Seguimiento de pedido",
       "img": {
         "imagenUno": "./new-colection/3.png",
         "imagenDos": "./new-colection/3.1.png",
@@ -40,6 +43,7 @@
       "id": 4,
       "nombre": "Tenis hombre 4",
       "precio": "50000",
+      "descripcion": "¡Aprovecha hoy! Conoce en adidas tu calzado deportivo favorito y haz tu estilo único. Únete a adiClub y obtén 20% de dto. Envío a todo Ecuador. Seguimiento de pedido",
       "img": {
         "imagenUno": "./new-colection/h1.png",
         "imagenDos": "./new-colection/h2.png",
@@ -52,6 +56,7 @@
       "id": 5,
       "nombre": "Tenis Mujer 1",
       "precio": "50000",
+      "descripcion": "Son zapatos hechos para correr, ligeros, livianos y flexibles, con capellada en malla para mantener los pies frescos y secos, ideales para que el corredor despegue con fuerza hacia delante. Limpiar la capellada sucia con un cepillo de cerdas suaves, húmedo y jabón neutro o suave.",
       "img": {
         "imagenUno": "./woman-colection/a1.png",
         "imagenDos": "./woman-colection/a2.png",
@@ -64,6 +69,7 @@
       "id": 6,
       "nombre": "Tenis Mujer 2",
       "precio": "900000",
+      "descripcion": "Son zapatos hechos para correr, ligeros, livianos y flexibles, con capellada en malla para mantener los pies frescos y secos, ideales para que el corredor despegue con fuerza hacia delante. Limpiar la capellada sucia con un cepillo de cerdas suaves, húmedo y jabón neutro o suave.",
       "img": {
         "imagenUno": "./woman-colection/ad1.png",
         "imagenDos": "./woman-colection/ad3.png",
@@ -75,6 +81,7 @@
       "id": 7,
       "nombre": "Tenis Mujer 3",
       "precio": "1000000",
+      "descripcion": "Son zapatos hechos para correr, ligeros, livianos y flexibles, con capellada en malla para mantener los pies frescos y secos, ideales para que el corredor despegue con fuerza hacia delante. Limpiar la capellada sucia con un cepillo de cerdas suaves, húmedo y jabón neutro o suave.",
       "img": {
         "imagenUno": "./woman-colection/adi1.png",
         "imagenDos": "./woman-colection/adi2.png",
@@ -87,6 +94,7 @@
       "id": 8,
       "nombre": "Tenis Mujer 4",
       "precio": "2000000",
+      "descripcion": "Son zapatos hechos para correr, ligeros, livianos y flexibles, con capellada en malla para mantener los pies frescos y secos, ideales para que el corredor despegue con fuerza hacia delante. Limpiar la capellada sucia con un cepillo de cerdas suaves, húmedo y jabón neutro o suave.",
       "img": {
         "imagenUno": "./woman-colection/ddas1.png",
         "imagenDos": "./woman-colection/ddas2.png",
@@ -94,30 +102,6 @@
         "imagenCuatro": "./woman-colection/ddas4.png"
       },
       "idCategoria": 10
-    },
-    {
-      "nombre": "prueba",
-      "precio": 9999,
-      "img": {
-        "imagenUno": "",
-        "imagenDos": "",
-        "imagenTres": "",
-        "imagenCuatro": ""
-      },
-      "idCategoria": 10,
-      "id": 11
-    },
-    {
-      "nombre": "prueba22",
-      "precio": 9999,
-      "img": {
-        "imagenUno": "",
-        "imagenDos": "",
-        "imagenTres": "",
-        "imagenCuatro": ""
-      },
-      "idCategoria": 10,
-      "id": 12
     }
   ],
   "categorias": [
@@ -640,6 +624,94 @@
       "celular": "rwerw",
       "numeroTarjeta": "erwer",
       "id": 95
+    },
+    {
+      "nombre": "242342",
+      "cedula": "234234",
+      "email": "234234",
+      "celular": "234234",
+      "numeroTarjeta": "234243",
+      "id": 96
+    },
+    {
+      "nombre": "Samuel",
+      "cedula": "234872384",
+      "email": "samuel@correo.com",
+      "celular": "3224567666",
+      "numeroTarjeta": "234723482",
+      "id": 97
+    },
+    {
+      "nombre": "Juan",
+      "cedula": "2734283",
+      "email": "juan@correo.com",
+      "celular": "3224566567",
+      "numeroTarjeta": "4234234234",
+      "id": 98
+    },
+    {
+      "nombre": "324623",
+      "cedula": "324234",
+      "email": "234234",
+      "celular": "2342",
+      "numeroTarjeta": "234234",
+      "id": 99
+    },
+    {
+      "nombre": "324623543",
+      "cedula": "324234345",
+      "email": "3453234234",
+      "celular": "23423453",
+      "numeroTarjeta": "234234345",
+      "id": 100
+    },
+    {
+      "nombre": "324623543",
+      "cedula": "324234345",
+      "email": "3453234234",
+      "celular": "23423453",
+      "numeroTarjeta": "234234345",
+      "id": 101
+    },
+    {
+      "nombre": "324623543",
+      "cedula": "324234345",
+      "email": "3453234234",
+      "celular": "23423453",
+      "numeroTarjeta": "234234345",
+      "id": 102
+    },
+    {
+      "nombre": "345345",
+      "cedula": "345345",
+      "email": "345345",
+      "celular": "345345",
+      "numeroTarjeta": "345345",
+      "id": 103
+    },
+    {
+      "nombre": "342",
+      "cedula": "",
+      "email": "",
+      "celular": "",
+      "numeroTarjeta": "2",
+      "id": 104
+    },
+    {
+      "nombre": "",
+      "cedula": "",
+      "email": "",
+      "celular": "",
+      "numeroTarjeta": "",
+      "id": 105
+    },
+    {
+      "nombre": "3453",
+      "cedula": "345345",
+      "email": "345345",
+      "celular": "345345",
+      "numeroTarjeta": "345345",
+      "id": 106
     }
   ]
 }

@@ -180,25 +180,28 @@
 
 
 
-    <!--  -->
+    <!-- Formulario  -->
 
     <div class="ModalCheckout" id="ModalCheckout">
-        <form id="formulario" class="p-3 mt-5 shadow border">
-            <h2 class="text-center text-primary">Formulario</h2>
+        <div class="formContainer">
+            <form id="formulario" class="p-3 mt-5 shadow border">
+                <h2 class="text-center text-primary">Formulario</h2>
 
-            <input id="nombre" class="form-control my-2" type="text" placeholder="ingrese su nombre">
+                <input id="nombre" class="form-control my-2" type="text" required placeholder="ingrese su nombre">
 
-            <input id="identificacion" class="form-control my-2" type="text" placeholder="ingrese su identificacion">
+                <input id="identificacion" class="form-control my-2" type="text" required placeholder="ingrese su identificacion">
 
-            <input id="email" class="form-control my-2" type="text" placeholder="ingrese su email">
+                <input id="email" class="form-control my-2" type="text" required placeholder="ingrese su email">
 
-            <input id="celular" class="form-control my-2" type="text" placeholder="ingrese su celular">
+                <input id="celular" class="form-control my-2" type="text" required placeholder="ingrese su celular">
 
-            <input id="numeroTarjeta" class="form-control my-2" type="text" placeholder="ingrese su numero de tarjeta">
+                <input id="numeroTarjeta" class="form-control my-2" type="text" required placeholder="ingrese su numero de tarjeta">
 
-            <button class="btn btn-primary mt-2" id="btn_fetch" type="submit">Enviar</button>
-        </form>
-        <button style="display: none;" id="btn_show_modal">Abrir modal</button>
+                <button class="btn btn-primary mt-2" id="btn_fetch" type="submit">Enviar datos</button>
+                <button class="btn btn-primary mt-2" id="btn_delete" type="reset" value="limpiar Formulario">Eliminar datos</button>
+            </form>
+            <button style="display: none;" id="btn_show_modal">Abrir modal</button>
+        </div>
     </div>
 
 
@@ -214,7 +217,10 @@
             Angie Diaz
         </a>
     </footer>
-    <script src="./script.js"></script>
+    <script src="./script.js">
+        function limpiarFormulario() {
+            document.getElementById("#formulario").reset();
+        }</script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <!--<script src="../formulario/app.js"></script>-->
 </body>
