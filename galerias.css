@@ -57,6 +57,7 @@ body {
     border-radius: 2rem;
     border: 1px solid var(--orange);
     margin-top: 11px;
+    cursor: pointer;
 }
 
 a {
@@ -76,6 +77,7 @@ a {
     gap: 1rem;
     display: flex;
     align-items: center;
+    cursor: pointer;
 }
 
 .icons {
