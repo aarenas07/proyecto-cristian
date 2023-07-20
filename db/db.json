@@ -176,6 +176,14 @@
       "celular": "234234",
       "numeroTarjeta": "234234",
       "id": 37
+    },
+    {
+      "nombre": "Alejandro",
+      "cedula": "28342934823",
+      "email": "alejandro@correo.com",
+      "celular": "263847234",
+      "numeroTarjeta": "2342364627-99",
+      "id": 38
     }
   ]
 }
